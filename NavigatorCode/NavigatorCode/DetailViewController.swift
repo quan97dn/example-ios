@@ -8,11 +8,14 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    var data: String?
+//    var data: String?
+    let userDefail: UserDefaults = UserDefaults()
     @IBOutlet weak var lblData: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblData.text = data?.lowercased()
+//        lblData.text = data?.lowercased()
+        let data: String = userDefail.object(forKey: "data") as! String
+        lblData.text = data
     }
     
 

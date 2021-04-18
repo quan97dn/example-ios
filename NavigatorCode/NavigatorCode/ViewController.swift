@@ -12,6 +12,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // userDefault is SharedPreferences android
+    let userDefault: UserDefaults = UserDefaults()
+    
     @IBOutlet weak var txtData: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +25,8 @@ class ViewController: UIViewController {
 //        data = txtData.text!
         let scr = storyboard?.instantiateViewController(identifier: "NVG2") as! DetailViewController
 //        present(scr, animated: true, completion: nil)
-        scr.data = txtData.text!
+//        scr.data = txtData.text!
+        userDefault.set(txtData.text!, forKey: "data")
         navigationController?.pushViewController(scr, animated: true)
     }
 }
