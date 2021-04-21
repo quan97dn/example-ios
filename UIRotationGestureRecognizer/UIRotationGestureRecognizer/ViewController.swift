@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
     @IBAction func actionRTTImg(_ sender: UIRotationGestureRecognizer) {
         imgLogo.transform = imgLogo.transform.rotated(by: sender.rotation)
+        sender.rotation = 0
     }
 }
 
