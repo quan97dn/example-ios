@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var categorys: Array<String> = ["Shop", "Car", "Children"]
+    
     @IBOutlet weak var pickerCategory: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,15 +19,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return 1
     }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categorys.count
+    }
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "ABC"
+        return categorys[row]
     }
 }
 
